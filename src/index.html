@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-strict-di>
+<head>
+    <title>ANG10</title>
+</head>
+<body ng-controller="HomeController as ctrl">
+
+<p>Starting {{ ctrl.campaign.name | upper }}</p>
+
+<p>Keyword {{ ctrl.keyword.name | upper }}</p>
+
+<script src="libs/angular.min.js"></script>
+<script src="scripts/app.min.js"></script>
+</body>
+</html>
