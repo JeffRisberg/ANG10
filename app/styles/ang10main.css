@@ -1,0 +1,16 @@
+
+.navbar-inverse .navbar-nav > li > a.active {
+    background: #ddd;
+    text-decoration: none;
+}
+
+.campaignList {
+    background-color: #ddd;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.campaign {
+    background-color: #fff;
+    padding: 10px;
+}

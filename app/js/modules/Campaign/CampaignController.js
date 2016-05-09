@@ -1,3 +1,7 @@
+/**
+ * @author Jeff Risberg
+ * @since April 2016
+ */
 class CampaignController {
 
     /*@ngInject;*/
