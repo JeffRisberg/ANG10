@@ -4,7 +4,7 @@
     text-decoration: none;
 }
 
-.campaignList {
+.campaign-list {
     background-color: #ddd;
     padding: 5px;
     margin-bottom: 5px;
@@ -12,5 +12,16 @@
 
 .campaign {
     background-color: #fff;
+    padding: 10px;
+}
+
+.keyword-list {
+    background-color: #ddd;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.keyword {
+    background-color: #34A3C5;
     padding: 10px;
 }
