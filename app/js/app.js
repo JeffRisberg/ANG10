@@ -15,14 +15,9 @@ import keywordModule from './modules/Keyword/keyword';
 
 import {Router} from './router';
 
-import NameService from './services/CampaignService';
-import KeywordService from './services/KeywordService';
-
 import {UpperFilter, LowerFilter} from './filters/textFilters';
 
 angular.module('myApp', ['ui.router', 'ui.router.stateHelper', homeModule.name, campaignModule.name, keywordModule.name])
-    .service('CampaignService', NameService)
-    .service('KeywordService', KeywordService)
     .filter('upper', UpperFilter)
     .filter('lower', LowerFilter)
     .config(Router);
