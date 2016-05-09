@@ -1,13 +1,15 @@
-export default class HomeController {
+class CampaignController {
 
     /*@ngInject;*/
     constructor(CampaignService, KeywordService) {
         CampaignService.getCampaign().then(campaign => {
             this.campaign = campaign;
         });
-        KeywordService.getKeyword().then(keyword => {
-            this.keyword = keyword;
+
+        KeywordService.getKeywords().then(keywords => {
+            this.keywords = keywords;
         });
     }
-
 }
+
+export default CampaignController;

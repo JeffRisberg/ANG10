@@ -1,6 +1,6 @@
 import Campaign from '../model/Campaign';
 
-export default class CampaignService {
+class CampaignService {
 
 	/*
 	  The below annotation will be processed by ngAnnotate, which
@@ -15,3 +15,5 @@ export default class CampaignService {
 		return this._$q.when(new Campaign());
 	}
 }
+
+export default CampaignService;

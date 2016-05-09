@@ -1,11 +1,12 @@
 
 export default class Keyword {
 
-	constructor() {
+	constructor(text) {
+		this._text = text;
 	}
 
-	get name() {
-		return "Football";
+	text() {
+		return this._text;
 	}
 
 }

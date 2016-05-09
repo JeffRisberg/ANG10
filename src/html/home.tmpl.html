@@ -1,0 +1,7 @@
+<p>HOME</p>
+
+<p>Starting {{ homeCtrl.campaign.name | upper }}</p>
+
+<div ng-repeat="keyword in homeCtrl.keywords">
+    <p>Keyword {{keyword.text()}}</p>
+</div>

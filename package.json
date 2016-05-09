@@ -33,5 +33,9 @@
     "body-parser": "^1.4.3",
     "nedb": "^1.8.0",
     "glob": "^7.0.3"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.2.18"
   }
 }

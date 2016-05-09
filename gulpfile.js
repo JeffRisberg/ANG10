@@ -35,7 +35,8 @@ gulp.task('html', function() {
 gulp.task('jshint', function() {
 	return gulp.src(src.scripts.all)
 		.pipe(plugins.jshint({
-			esnext: true // Enable ES6 support
+			asi: true,
+			esversion: 6
 		}))
 		.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
