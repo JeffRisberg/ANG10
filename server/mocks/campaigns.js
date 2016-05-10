@@ -1,46 +1,46 @@
 module.exports = function (app) {
     var express = require('express');
-    var eventsRouter = express.Router();
+    var campaignsRouter = express.Router();
 
     // Use the body-parser library in this service
     var bodyParser = require('body-parser');
-    eventsRouter.use(bodyParser.json());
+    campaignsRouter.use(bodyParser.json());
 
-    var eventsDB = app.eventsDB;
+    var campaignsDB = app.campaignsDB;
 
-    eventsRouter.get('/', function (req, res) {
+    campaignsRouter.get('/', function (req, res) {
         delete req.query["_"];
-        eventsDB.find(req.query).exec(function (error, events) {
+        campaignsDB.find(req.query).exec(function (error, campaigns) {
             res.send({
                 'status': 'ok',
-                'data': events
+                'data': campaigns
             })
         })
     });
 
-    eventsRouter.post('/', function (req, res) {
+    campaignsRouter.post('/', function (req, res) {
         // Look for the most recently created record
-        eventsDB.find({}).sort({id: -1}).limit(1).exec(function (err, events) {
+        campaignsDB.find({}).sort({id: -1}).limit(1).exec(function (err, campaigns) {
 
-            if (events.length != 0)
-                req.body.event.id = events[0].id + 1;
+            if (campaigns.length != 0)
+                req.body.campaign.id = campaigns[0].id + 1;
             else
-                req.body.event.id = 1;
+                req.body.campaign.id = 1;
 
             // Insert the new record
-            eventsDB.insert(req.body.event, function (err, newEvent) {
+            campaignsDB.insert(req.body.campaign, function (err, newcampaign) {
                 res.status(201);
-                res.send({'status': 'ok', 'data': [newEvent]});
+                res.send({'status': 'ok', 'data': [newcampaign]});
             })
         });
     });
 
-    eventsRouter.get('/:id', function (req, res) {
-        eventsDB.find({id: req.params.id}).exec(function (error, events) {
-            if (events.length > 0)
+    campaignsRouter.get('/:id', function (req, res) {
+        campaignsDB.find({id: req.params.id}).exec(function (error, campaigns) {
+            if (campaigns.length > 0)
                 res.send({
                     'status': 'ok',
-                    'data': events
+                    'data': campaigns
                 });
             else {
                 res.status(404);
@@ -52,19 +52,19 @@ module.exports = function (app) {
         });
     });
 
-    eventsRouter.put('/:id', function (req, res) {
-        var event = req.body.event;
+    campaignsRouter.put('/:id', function (req, res) {
+        var campaign = req.body.campaign;
 
-        eventsDB.update({id: req.params.id}, event, {}, function (err, count) {
-            res.send({'status': 'ok', 'data': [event]});
+        campaignsDB.update({id: req.params.id}, campaign, {}, function (err, count) {
+            res.send({'status': 'ok', 'data': [campaign]});
         });
     });
 
-    eventsRouter.delete('/:id', function (req, res) {
-        eventsDB.remove({id: req.params.id}, {}, function (err, count) {
+    campaignsRouter.delete('/:id', function (req, res) {
+        campaignsDB.remove({id: req.params.id}, {}, function (err, count) {
             res.status(204).end();
         });
     });
 
-    app.use('/api/campaigns', eventsRouter);
+    app.use('/api/campaigns', campaignsRouter);
 };

@@ -7,12 +7,20 @@ class CampaignService {
 	  will annotate the constructor after compiling for minification.
 	*/
 	/*@ngInject;*/
-	constructor($q) {
-		this._$q = $q;
+	constructor($http) {
+		this._$http = $http;
 	}
 
-	getCampaign() {
-		return this._$q.when(new Campaign());
+	getCampaigns() {
+		return this._$http(get(getUrl())).then(extract);
+	}
+
+	extract(result) {
+		return result.data;
+	}
+
+	getUrl() {
+		return "api/campaigns";
 	}
 }
 
