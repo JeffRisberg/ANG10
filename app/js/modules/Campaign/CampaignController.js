@@ -6,8 +6,8 @@ class CampaignController {
 
     /*@ngInject;*/
     constructor(CampaignService, KeywordService) {
-        CampaignService.getCampaign().then(campaign => {
-            this.campaign = campaign;
+        CampaignService.getCampaigns().then(campaigns => {
+            this.campaigns = campaigns;
         });
 
         KeywordService.getKeywords().then(keywords => {

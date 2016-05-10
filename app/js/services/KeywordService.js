@@ -7,14 +7,20 @@ class KeywordService {
      will annotate the constructor after compiling for minification.
      */
     /*@ngInject;*/
-    constructor($q) {
-        this._$q = $q;
+    constructor($http) {
+        this._$http = $http;
     }
 
     getKeywords() {
-        return this._$q.when([
-            new Keyword("dog"), new Keyword("cat"), new Keyword("chimp"), new Keyword("tiger")
-        ]);
+        return this._$http.get(this.getUrl()).then(this.extract);
+    }
+
+    extract(result) {
+        return result.data;
+    }
+
+    getUrl() {
+        return "api/keywords";
     }
 }
 

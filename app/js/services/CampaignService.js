@@ -12,7 +12,7 @@ class CampaignService {
 	}
 
 	getCampaigns() {
-		return this._$http(get(getUrl())).then(extract);
+		return this._$http.get(this.getUrl()).then(this.extract);
 	}
 
 	extract(result) {

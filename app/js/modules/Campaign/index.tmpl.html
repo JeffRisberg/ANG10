@@ -2,6 +2,8 @@
     <div class="col-md-5">Campaign Template</div>
 
     <div class="col-md-7 campaign-list">
-        <p class="campaign">Starting {{ campaignCtrl.campaign.name | upper }}</p>
+        <div ng-repeat="campaign in campaignCtrl.campaigns" class="campaign">
+            <p>Campaign {{campaign.name()}}</p>
+        </div>
     </div>
 </div>
