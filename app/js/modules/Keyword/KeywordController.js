@@ -6,7 +6,7 @@ class KeywordController {
 
     /*@ngInject;*/
     constructor(KeywordService) {
-       KeywordService.getKeywords().then(keywords => {
+        KeywordService.getKeywords().then(keywords => {
             this.keywords = keywords;
         });
     }

@@ -11,10 +11,9 @@ module.exports = function (app) {
     campaignsRouter.get('/', function (req, res) {
         delete req.query["_"];
         campaignsDB.find(req.query).exec(function (error, campaigns) {
-            res.send({
-                'status': 'ok',
-                'data': campaigns
-            })
+            res.send(
+               campaigns
+            )
         })
     });
 
@@ -39,15 +38,10 @@ module.exports = function (app) {
         campaignsDB.find({id: req.params.id}).exec(function (error, campaigns) {
             if (campaigns.length > 0)
                 res.send({
-                    'status': 'ok',
-                    'data': campaigns
+                    campaigns
                 });
             else {
                 res.status(404);
-                res.send({
-                    'status': 'missing',
-                    'data': null
-                });
             }
         });
     });

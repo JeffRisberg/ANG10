@@ -11,10 +11,9 @@ module.exports = function (app) {
     keywordsRouter.get('/', function (req, res) {
         delete req.query["_"];
         keywordsDB.find(req.query).exec(function (error, keywords) {
-            res.send({
-                'status': 'ok',
-                'data': keywords
-            })
+            res.send(
+                keywords
+            )
         })
     });
 
@@ -39,15 +38,10 @@ module.exports = function (app) {
         keywordsDB.find({id: req.params.id}).exec(function (error, keywords) {
             if (keywords.length > 0)
                 res.send({
-                    'status': 'ok',
-                    'data': keywords
+                    keywords
                 });
             else {
                 res.status(404);
-                res.send({
-                    'status': 'missing',
-                    'data': null
-                });
             }
         });
     });
