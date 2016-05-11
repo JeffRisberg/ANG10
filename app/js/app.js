@@ -12,6 +12,8 @@ import uiRouterStateHelper from 'angular-ui-router.stateHelper';
 import homeModule from './modules/Home/home';
 import campaignModule from './modules/Campaign/campaign';
 import keywordModule from './modules/Keyword/keyword';
+import slider from './directives/slider';
+import nice from './directives/Nice';
 
 import {Router} from './router';
 
@@ -20,4 +22,6 @@ import {UpperFilter, LowerFilter} from './filters/textFilters';
 angular.module('myApp', ['ui.router', 'ui.router.stateHelper', homeModule.name, campaignModule.name, keywordModule.name])
     .filter('upper', UpperFilter)
     .filter('lower', LowerFilter)
+    .directive('slider', slider)
+    .directive('nice', nice)
     .config(Router);

@@ -8,6 +8,7 @@ class KeywordService {
      */
     /*@ngInject;*/
     constructor($http) {
+        console.log("constructor for KeywordService");
         this._$http = $http;
     }
 
