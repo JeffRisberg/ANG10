@@ -4,8 +4,7 @@
  */
 class HomeController {
 
-    /*@ngInject;*/
-    constructor(CampaignService, KeywordService) {
+    constructor() {
 
         this.metrics = [
             {name: 'Widgets', expected: 1.00, actual: 0.25},

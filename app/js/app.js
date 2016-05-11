@@ -12,16 +12,17 @@ import uiRouterStateHelper from 'angular-ui-router.stateHelper';
 import homeModule from './modules/Home/home';
 import campaignModule from './modules/Campaign/campaign';
 import keywordModule from './modules/Keyword/keyword';
-import slider from './directives/slider';
-import nice from './directives/Nice';
+import sliderModule from './directives/slider';
+import fetcherModule from './directives/fetcher';
 
 import {Router} from './router';
 
 import {UpperFilter, LowerFilter} from './filters/textFilters';
 
-angular.module('myApp', ['ui.router', 'ui.router.stateHelper', homeModule.name, campaignModule.name, keywordModule.name])
+export default
+angular.module('ang10', ['ui.router', 'ui.router.stateHelper',
+    homeModule.name, campaignModule.name, keywordModule.name,
+    sliderModule.name, fetcherModule.name])
     .filter('upper', UpperFilter)
     .filter('lower', LowerFilter)
-    .directive('slider', slider)
-    .directive('nice', nice)
     .config(Router);

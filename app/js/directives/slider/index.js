@@ -1,12 +1,13 @@
 'use strict';
 
-export default function slider () {
+var slider = function () {
     return {
         restrict: 'E',
         scope: {metric: '='},
         template: require("./slider.tmpl.html"),
 
         link: function ($scope, $element, $attrs) {
+
             // temporary strings bound to the results of the range inputs
             $scope.actualStr = $scope.metric.actual;
             $scope.expectedStr = $scope.metric.expected;
@@ -20,4 +21,8 @@ export default function slider () {
             });
         }
     }
-};
+}
+
+var sliderModule = angular.module("slider", []).directive("slider", [slider]);
+
+export default sliderModule;
