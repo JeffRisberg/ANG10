@@ -8,6 +8,7 @@ class CampaignService {
 	*/
 	/*@ngInject;*/
 	constructor($http) {
+		console.log("constructor for CampaignService");
 		this._$http = $http;
 	}
 
