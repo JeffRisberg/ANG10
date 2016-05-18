@@ -11,11 +11,14 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         plugins: [
+            'karma-commonjs',
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
+            'karma-babel-preprocessor',
             'karma-ng-html2js-preprocessor',
             'karma-jasmine',
-            'karma-coverage'
+            'karma-coverage',
+            'karma-webpack'
         ],
 
         // list of files / patterns to load in the browser
@@ -23,9 +26,8 @@ module.exports = function (config) {
             'node_modules/jquery/dist/jquery.js',
             'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
             'node_modules/angular/angular.js',
-            'src/vendor/angular-ui-router.min.js',
-            'src/app/**/*.js',
-            'src/app/**/*.html',
+            'app/**/*.js',
+            'app/**/*.html',
             'node_modules/angular-mocks/angular-mocks.js',
             'test/**/*.spec.js'
         ],
@@ -37,12 +39,25 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             '**/*.tmpl.html': ['ng-html2js'],
-            './src/**/*.js' : ['coverage']
+            './app/js/**/*.js' : ['babel', 'coverage']
+        },
+
+        babelPreprocessor: {
+            options: {
+                presets: ['es2015'],
+                sourceMap: 'inline'
+            },
+            filename: function (file) {
+                return file.originalPath.replace(/\.js$/, '.es5.js');
+            },
+            sourceFileName: function (file) {
+                return file.originalPath;
+            }
         },
 
         ngHtml2JsPreprocessor: {
             // strip this from the file path
-            stripPrefix: 'src/',
+            stripPrefix: '/',
 
             // setting this option will create only a single module that contains templates
             // from all the files, so you can load them all with module('foo')
