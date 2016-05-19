@@ -13,7 +13,7 @@ describe('Slider Directive Rendering', function () {
         rootScope = $rootScope;
     }));
 
-    it('should render HTML based on scope correctly', function () {
+    it('should render HTML based on first metric correctly', function () {
         var scope = rootScope.$new();
 
         scope.metric = {
@@ -37,5 +37,31 @@ describe('Slider Directive Rendering', function () {
 
         expect($('.slider-actual span.num', renderedHTML)).toHaveText('0.66');
         expect($('.slider-expected span.num', renderedHTML)).toHaveText('1');
+    });
+
+    it('should render HTML based on second metric correctly', function () {
+        var scope = rootScope.$new();
+
+        scope.metric = {
+            name: 'Widgets',
+            actual: 0.55,
+            expected: 0.66
+        };
+        scope.title = 'ANG10';
+
+        var element = compile('<slider metric="metric"/>')(scope);
+
+        scope.$digest();
+
+        var renderedHTML = element.html().trim();
+
+        expect($('.slider-actual', renderedHTML)).toExist();
+        expect($('.slider-expected', renderedHTML)).toExist();
+
+        expect($('.slider-actual span.num', renderedHTML)).toExist();
+        expect($('.slider-expected span.num', renderedHTML)).toExist();
+
+        expect($('.slider-actual span.num', renderedHTML)).toHaveText('0.55');
+        expect($('.slider-expected span.num', renderedHTML)).toHaveText('0.66');
     });
 });

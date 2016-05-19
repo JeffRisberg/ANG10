@@ -11,13 +11,10 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         plugins: [
-            'karma-commonjs',
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
-            'karma-babel-preprocessor',
             'karma-ng-html2js-preprocessor',
             'karma-jasmine',
-            'karma-coverage',
             'karma-webpack'
         ],
 
@@ -25,8 +22,7 @@ module.exports = function (config) {
         files: [
             'node_modules/jquery/dist/jquery.js',
             'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
-            'node_modules/angular/angular.js',
-            'app/**/*.js',
+            'dist/bundle.js',
             'app/**/*.html',
             'node_modules/angular-mocks/angular-mocks.js',
             'test/**/*.spec.js'
@@ -39,20 +35,7 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             '**/*.tmpl.html': ['ng-html2js'],
-            './app/js/**/*.js' : ['babel', 'coverage']
-        },
-
-        babelPreprocessor: {
-            options: {
-                presets: ['es2015'],
-                sourceMap: 'inline'
-            },
-            filename: function (file) {
-                return file.originalPath.replace(/\.js$/, '.es5.js');
-            },
-            sourceFileName: function (file) {
-                return file.originalPath;
-            }
+            'dist/bundle.js' : ['webpack']
         },
 
         ngHtml2JsPreprocessor: {

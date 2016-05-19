@@ -1,4 +1,11 @@
-To use this sample project you need gulp installed (`npm install -g gulp`).
+# Example of using ES6 for writing directives in an Angular 1 application, along with Karma tests for them.
 
-The default task will execute `gulp serve` which build the sources, watch for changes
-and serve them on port [4242](http://localhost:4242).
+## To use this sample project you need to run:
+
+`npm install`
+
+Then go to localhost:3000 in a browser
+
+## For testing, use Karma
+
+`karma start`
