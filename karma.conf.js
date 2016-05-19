@@ -11,11 +11,12 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         plugins: [
+            'karma-ng-html2js-preprocessor',
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
-            'karma-ng-html2js-preprocessor',
             'karma-jasmine',
-            'karma-webpack'
+            'karma-webpack',
+            'karma-coverage'
         ],
 
         // list of files / patterns to load in the browser
