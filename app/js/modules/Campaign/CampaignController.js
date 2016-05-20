@@ -9,7 +9,7 @@
 class CampaignController {
 
     /*@ngInject;*/
-    constructor($rootScope, CampaignService, KeywordService) {
+    constructor($rootScope, CampaignService) {
         console.log("constructor for CampaignController");
 
         CampaignService.getCampaigns().then(campaigns => {
