@@ -19,6 +19,8 @@ import {Router} from './router';
 
 import {UpperFilter, LowerFilter} from './filters/textFilters';
 
+require("../styles/ang10main.scss");
+
 export default
 angular.module('ang10', ['ui.router', 'ui.router.stateHelper',
     homeModule.name, campaignModule.name, keywordModule.name,

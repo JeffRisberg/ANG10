@@ -1,27 +1,33 @@
 
+$list-color: #DDD;
+
+$campaign-color: #FFFFFF;
+
+$keyword-color: #34A3C5;
+
 .navbar-inverse .navbar-nav > li > a.active {
     background: #ddd;
     text-decoration: none;
 }
 
 .campaign-list {
-    background-color: #ddd;
+    background-color: $list-color;
     padding: 5px;
     margin-bottom: 5px;
 }
 
 .campaign {
-    background-color: #fff;
+    background-color: $campaign-color;
     padding: 10px;
 }
 
 .keyword-list {
-    background-color: #ddd;
+    background-color: $list-color;
     padding: 5px;
     margin-bottom: 5px;
 }
 
 .keyword {
-    background-color: #34A3C5;
+    background-color: $keyword-color;
     padding: 10px;
 }
