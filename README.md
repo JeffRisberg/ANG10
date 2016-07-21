@@ -4,6 +4,10 @@
 
 `npm install`
 
+Then 
+
+`npm start`
+
 Then go to localhost:3000 in a browser
 
 ## For testing, use Karma

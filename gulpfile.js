@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var karma = require('karma').server;
-var ghPages = require('gulp-gh-pages');
 
 /**
  * Run test once and exit
@@ -20,11 +19,5 @@ gulp.task('tdd', function (done) {
         configFile: __dirname + '/karma.conf.js'
     }, done);
 });
-
-gulp.task('deploy', function() {
-    return gulp.src('./src/**/*')
-        .pipe(ghPages());
-});
-
 
 gulp.task('default', ['test']);
