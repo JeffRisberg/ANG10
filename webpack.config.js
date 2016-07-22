@@ -1,3 +1,4 @@
+
 module.exports = {
     entry: {
         javascript: "./app/js/app.js"
@@ -10,7 +11,8 @@ module.exports = {
         loaders: [
             {test: /\.js$/, exclude: /node_modules/, loader: "babel"},
             {test: /\.html$/, loader: 'raw'},
-            {test: /\.scss$/, loaders: [ 'style', 'css', 'sass' ] }
+            {test: /\.jade$/, loader: 'jade'},
+            {test: /\.scss$/, loaders: ['style', 'css', 'sass']}
         ]
     }
 };

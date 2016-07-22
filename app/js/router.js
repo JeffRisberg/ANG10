@@ -22,7 +22,7 @@ function Router(stateHelperProvider, $urlRouterProvider) {
                     name: 'campaign',
                     url: "campaign",
                     controller: "CampaignController as campaignCtrl",
-                    template: require("./modules/Campaign/index.tmpl.html")
+                    template: require("./modules/Campaign/index.tmpl.jade")
                 },
                 {
                     name: 'keyword',
