@@ -10,7 +10,7 @@ class CampaignController {
 
     /*@ngInject;*/
     constructor($rootScope, CampaignService) {
-        console.log("constructor for CampaignController");
+        console.log('constructor for CampaignController');
 
         CampaignService.getCampaigns().then(campaigns => {
             this.campaigns = campaigns;

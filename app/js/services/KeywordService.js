@@ -1,4 +1,3 @@
-import Keyword from '../model/Keyword';
 
 class KeywordService {
 
@@ -8,7 +7,7 @@ class KeywordService {
      */
     /*@ngInject;*/
     constructor($http) {
-        console.log("constructor for KeywordService");
+        console.log('constructor for KeywordService');
         this._$http = $http;
     }
 
@@ -21,8 +20,8 @@ class KeywordService {
     }
 
     getUrl() {
-        return "api/keywords";
+        return 'api/keywords';
     }
 }
 
-export default KeywordService
+export default KeywordService;

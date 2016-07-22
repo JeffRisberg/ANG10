@@ -1,5 +1,14 @@
 var gulp = require('gulp');
+var jshint = require('gulp-jshint');
 var karma = require('karma').server;
+
+gulp.task('lint', function () {
+    var errorsOnly = true;
+
+    return gulp.src(['app/js/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default', errorsOnly));
+});
 
 /**
  * Run test once and exit

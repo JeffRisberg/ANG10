@@ -10,7 +10,7 @@ class KeywordController {
 
     /*@ngInject;*/
     constructor($rootScope, KeywordService) {
-        console.log("constructor for KeywordController");
+        console.log('constructor for KeywordController');
 
         KeywordService.getKeywords().then(keywords => {
             this.keywords = keywords;

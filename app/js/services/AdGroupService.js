@@ -1,4 +1,3 @@
-import AdGroup from '../model/AdGroup';
 
 class AdGroupService {
 
@@ -8,7 +7,7 @@ class AdGroupService {
      */
     /*@ngInject;*/
     constructor($http) {
-        console.log("constructor for AdGroupService");
+        console.log('constructor for AdGroupService');
         this._$http = $http;
     }
 
@@ -21,8 +20,8 @@ class AdGroupService {
     }
 
     getUrl() {
-        return "api/adGroups";
+        return 'api/adGroups';
     }
 }
 
-export default AdGroupService
+export default AdGroupService;

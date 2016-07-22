@@ -1,7 +1,7 @@
-import HomeController from "./HomeController";
+import HomeController from './HomeController';
 
-var homeModule = angular.module("Home", []);
+var homeModule = angular.module('Home', []);
 
-homeModule.controller("HomeController", HomeController);
+homeModule.controller('HomeController', HomeController);
 
-export default homeModule
+export default homeModule;

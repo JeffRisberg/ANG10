@@ -1,4 +1,3 @@
-import Campaign from '../model/Campaign';
 
 class CampaignService {
 
@@ -8,7 +7,7 @@ class CampaignService {
 	*/
 	/*@ngInject;*/
 	constructor($http) {
-		console.log("constructor for CampaignService");
+		console.log('constructor for CampaignService');
 		this._$http = $http;
 	}
 
@@ -21,7 +20,7 @@ class CampaignService {
 	}
 
 	getUrl() {
-		return "api/campaigns";
+		return 'api/campaigns';
 	}
 }
 

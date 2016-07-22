@@ -5,7 +5,7 @@ export default class Campaign {
 	}
 
 	get name() {
-		return "Winter 2016 Promotion";
+		return 'Winter 2016 Promotion';
 	}
 
 }

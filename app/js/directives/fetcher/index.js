@@ -22,7 +22,7 @@ class Fetcher {
         this.onClick = this.onClick.bind(this);
     }
 
-    link(scope, element, attr) {
+    link(scope) {
         scope.onClick = () => this.onClick(scope);
         scope.text = 'Click here to fetch';
     }
@@ -37,6 +37,6 @@ class Fetcher {
     }
 }
 
-var fetcherModule = angular.module("fetcher", []).directive("fetcher", ['$http', Fetcher.builder]);
+var fetcherModule = angular.module('fetcher', []).directive('fetcher', ['$http', Fetcher.builder]);
 
 export default fetcherModule;

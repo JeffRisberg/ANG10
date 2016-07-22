@@ -1,3 +1,5 @@
+/* jshint unused:false */
+
 /**
  * Import all Angular components via ES6 imports and register them
  * at your module via their corresponding functions (controller, service, etc.).
@@ -20,7 +22,7 @@ import {Router} from './router';
 
 import {UpperFilter, LowerFilter} from './filters/textFilters';
 
-require("../styles/ang10main.scss");
+require('../styles/ang10main.scss');
 
 export default
 angular.module('ang10', ['ui.router', 'ui.router.stateHelper',

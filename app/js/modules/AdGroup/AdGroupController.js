@@ -10,7 +10,7 @@ class AdGroupController {
 
     /*@ngInject;*/
     constructor($rootScope, AdGroupService) {
-        console.log("constructor for AdGroupController");
+        console.log('constructor for AdGroupController');
 
         AdGroupService.getAdGroups().then(adGroups => {
             this.adGroups = adGroups;
