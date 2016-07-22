@@ -1,4 +1,10 @@
-
+/**
+ * @ngdoc service
+ * @name campaign.service:CampaignService
+ * @description Fetches campaigns from back end
+ * @author Jeff Risberg
+ * @since May 2016
+ */
 class CampaignService {
 
 	/*

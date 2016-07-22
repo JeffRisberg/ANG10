@@ -6,6 +6,12 @@
  * @author Jeff Risberg
  * @since July 2016
  */
+/**
+ * @ngdoc controller
+ * @name adGroup.controller:AdGroupController
+ * @description
+ * Fetches adGroups and provides them to view
+ */
 class AdGroupController {
 
     /*@ngInject;*/

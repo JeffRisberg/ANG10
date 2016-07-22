@@ -6,6 +6,12 @@
  * @author Jeff Risberg
  * @since April 2016
  */
+/**
+ * @ngdoc controller
+ * @name campaign.controller:CampaignController
+ * @description
+ * Fetches campaigns and provides them to view
+ */
 class CampaignController {
 
     /*@ngInject;*/

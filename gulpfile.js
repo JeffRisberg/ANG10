@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
+var gulpDocs = require('gulp-ngdocs');
 var karma = require('karma').server;
 
 gulp.task('lint', function () {
@@ -8,6 +9,12 @@ gulp.task('lint', function () {
     return gulp.src(['app/js/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default', errorsOnly));
+});
+
+gulp.task('ngdocs', [], function () {
+    return gulp.src(['app/js/**/*.js'])
+        .pipe(gulpDocs.process())
+        .pipe(gulp.dest('./docs'));
 });
 
 /**

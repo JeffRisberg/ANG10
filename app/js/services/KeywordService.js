@@ -1,4 +1,11 @@
 
+/**
+ * @ngdoc service
+ * @name keyword.service:KeywordService
+ * @description Fetches keywords from back end
+ * @author Jeff Risberg
+ * @since May 2016
+ */
 class KeywordService {
 
     /*

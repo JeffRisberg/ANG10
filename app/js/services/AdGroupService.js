@@ -1,4 +1,10 @@
-
+/**
+ * @ngdoc service
+ * @name adGroup.service:AdGroupService
+ * @description Fetches adGroups from back end
+ * @author Jeff Risberg
+ * @since May 2016
+ */
 class AdGroupService {
 
     /*

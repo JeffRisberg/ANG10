@@ -6,6 +6,12 @@
  * @author Jeff Risberg
  * @since April 2016
  */
+/**
+ * @ngdoc controller
+ * @name keyword.controller:KeywordController
+ * @description
+ * Fetches keywords and provides them to view
+ */
 class KeywordController {
 
     /*@ngInject;*/

@@ -30,6 +30,7 @@
     "file-loader": "^0.8.5",
     "glob": "^7.0.3",
     "gulp-jshint": "^2.0.1",
+    "gulp-ngdocs": "^0.2.13",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "jasmine-jquery": "^2.1.1",
