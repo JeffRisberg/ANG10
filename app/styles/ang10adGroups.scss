@@ -5,13 +5,17 @@
   text-decoration: none;
 }
 
-.campaign-list {
+.adGroup-list {
   background-color: $list-color;
   padding: 5px;
   margin-bottom: 5px;
 }
 
-.campaign {
-  background-color: $campaign-color;
+.adGroup {
+  background-color: $adGroup-color;
   padding: 10px;
+}
+
+.adGroup p {
+  margin: 0px;
 }
