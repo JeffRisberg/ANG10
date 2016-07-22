@@ -1,5 +1,5 @@
 
-export default class KeywordGroup {
+export default class AdGroup {
 
 	constructor() {
 	}

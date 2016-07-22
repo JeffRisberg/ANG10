@@ -3,6 +3,8 @@ $list-color: #DDD;
 
 $campaign-color: #459988;
 
+$adGroup-color: #C0C0C0;
+
 $keyword-color: #34A3C5;
 
 .navbar-inverse .navbar-nav > li > a.active {
@@ -18,6 +20,17 @@ $keyword-color: #34A3C5;
 
 .campaign {
     background-color: $campaign-color;
+    padding: 10px;
+}
+
+.adGroup-list {
+    background-color: $list-color;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.adGroup {
+    background-color: $adGroup-color;
     padding: 10px;
 }
 

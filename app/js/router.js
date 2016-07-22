@@ -25,6 +25,12 @@ function Router(stateHelperProvider, $urlRouterProvider) {
                     template: require("./modules/Campaign/index.tmpl.jade")
                 },
                 {
+                    name: 'adGroup',
+                    url: "adGroup",
+                    controller: "AdGroupController as adGroupCtrl",
+                    template: require("./modules/AdGroup/index.tmpl.jade")
+                },
+                {
                     name: 'keyword',
                     url: "keyword",
                     controller: "KeywordController as keywordCtrl",
