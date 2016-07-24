@@ -2,8 +2,13 @@
     .col-md-5
         | Campaigns Template
 
-    .col-md-7.campaign-list
-        .campaign(ng-repeat="campaign in campaignCtrl.campaigns")
-            p Campaign {{campaign.name}}
+    table.col-md-7.campaign-list.table
+        tr.campaign(ng-repeat="campaign in campaignCtrl.campaigns")
+            td
+                Campaign {{campaign.name}}
+            td
+                | {{campaign.status}}
+            td
+                | {{campaign.startDate}}
 
 include ./_footer.jade

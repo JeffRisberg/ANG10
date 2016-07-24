@@ -16,16 +16,22 @@ class KeywordController {
 
     /*@ngInject;*/
     constructor($rootScope, KeywordService) {
-        console.log('constructor for KeywordController');
+        console.log('Constructing KeywordController');
 
-        KeywordService.getKeywords().then(keywords => {
-            this.keywords = keywords;
-        });
+        this.keywordService = KeywordService;
 
         // Don't do this, because an $on handler will be created each time constructor is called.
         //$rootScope.$on('$stateChangeStart', function (e, toState, toParams) {
         //    console.log("$stateChangeStart for KeywordController to " + toState.name);
         //});
+
+        this.fetchData();
+    }
+
+    fetchData() {
+        this.keywordService.getKeywords().then(keywords => {
+            this.keywords = keywords;
+        });
     }
 }
 

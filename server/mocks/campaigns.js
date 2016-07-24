@@ -9,12 +9,42 @@ module.exports = function (app) {
     var campaignsDB = app.campaignsDB;
 
     campaignsRouter.get('/', function (req, res) {
+
+        var take = parseInt(req.query.take);
+        var skip = parseInt(req.query.skip);
+        var page = req.query.page;
+        var pageSize = req.query.pageSize;
+        var sortField = req.query.sort ? req.query.sort[0].field : null;
+        var sortDir = req.query.sort ? req.query.sort[0].dir : null;
+
+        console.log("take " + take + " skip " + skip + " page " + page + " pageSize " + pageSize +
+            " sortField " + sortField + " sortDir " + sortDir);
+
+        if (isNaN(take)) take = Number.MAX_SAFE_INTEGER;
+        if (isNaN(skip)) skip = 0;
+
         delete req.query["_"];
-        campaignsDB.find(req.query).exec(function (error, campaigns) {
-            res.send(
-               campaigns
-            )
-        })
+        delete req.query["take"];
+        delete req.query["skip"];
+        delete req.query["page"];
+        delete req.query["pageSize"];
+        delete req.query["sort"];
+
+        var sort = {};
+        if (sortField) sort[sortField] = (sortDir.toLowerCase() == 'asc' ? 1 : -1);
+
+        campaignsDB.find(req.query).sort(sort).skip(skip).limit(take).exec(function (error, campaigns) {
+                campaignsDB.count(req.query).exec(function (error, count) {
+                    res.send(
+                        {
+                            'status': "ok",
+                            'data': campaigns,
+                            'total': count
+                        }
+                    )
+                })
+            }
+        );
     });
 
     campaignsRouter.post('/', function (req, res) {

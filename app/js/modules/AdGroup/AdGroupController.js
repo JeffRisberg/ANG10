@@ -16,16 +16,22 @@ class AdGroupController {
 
     /*@ngInject;*/
     constructor($rootScope, AdGroupService) {
-        console.log('constructor for AdGroupController');
+        console.log('Constructing AdGroupController');
 
-        AdGroupService.getAdGroups().then(adGroups => {
-            this.adGroups = adGroups;
-        });
+        this.adGroupService = AdGroupService;
 
         // Don't do this, because an $on handler will be created each time constructor is called.
         //$rootScope.$on('$stateChangeStart', function (e, toState, toParams) {
         //    console.log("$stateChangeStart for AdGroupController to " + toState.name);
         //});
+
+        this.fetchData();
+    }
+
+    fetchData() {
+        this.adGroupService.getAdGroups().then(adGroups => {
+            this.adGroups = adGroups;
+        });
     }
 }
 
