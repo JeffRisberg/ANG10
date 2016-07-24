@@ -1,25 +1,20 @@
-<div class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0px">
-    <div class="container">
-        <div class="navbar-inner">
-            <a ui-sref="root.home" class="navbar-brand">ANG10</a>
-
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li ui-sref-active="active">
-                        <a ui-sref="root.campaign">Campaigns</a>
-                    </li>
-                    <li ui-sref-active="active">
-                        <a ui-sref="root.adGroup">AdGroups</a>
-                    </li>
-                    <li ui-sref-active="active">
-                        <a ui-sref="root.keyword">Keywords</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button ui-sref="root.home" style="margin-right: 30px;" ng-class="{active: stateIncludes('root.home')}">
+            Home
+        </md-button>
+        <md-button ui-sref="root.campaign" style="margin-right: 30px;" ng-class="{active: stateIncludes('root.campaign')}">
+            Campaigns
+        </md-button>
+        <md-button ui-sref="root.adGroup" style="margin-right: 30px;" ng-class="{active: stateIncludes('root.adGroup')}">
+            Ad Groups
+        </md-button>
+        <md-button ui-sref="root.keyword" style="margin-right: 30px;" ng-class="{active: stateIncludes('root.keyword')}">
+            Keywords
+        </md-button>
     </div>
-</div>
+</md-toolbar>
 
-<div class="container">
+<div style="margin-left: 32px; margin-right: 32px;">
     <ui-view></ui-view>
 </div>

@@ -11,21 +11,23 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import uiRouterStateHelper from 'angular-ui-router.stateHelper';
 
+import sliderModule from './directives/slider';
+import fetcherModule from './directives/fetcher';
+
 import homeModule from './modules/Home/home';
 import campaignModule from './modules/Campaign/campaign';
 import adGroupModule from './modules/AdGroup/adGroup';
 import keywordModule from './modules/Keyword/keyword';
-import sliderModule from './directives/slider';
-import fetcherModule from './directives/fetcher';
 
 import {Router} from './router';
 
 import {UpperFilter, LowerFilter} from './filters/textFilters';
 
-require('../styles/ang10main.scss');
+require('../styles/main.scss');
 
 export default
-angular.module('ang10', ['ui.router', 'ui.router.stateHelper',
+angular.module('ang10', ['ngMaterial', 'ngMessages',
+    'ui.router', 'ui.router.stateHelper',
     homeModule.name, campaignModule.name, adGroupModule.name, keywordModule.name,
     sliderModule.name, fetcherModule.name])
     .filter('upper', UpperFilter)

@@ -34,7 +34,7 @@ function Router(stateHelperProvider, $urlRouterProvider) {
                     name: 'keyword',
                     url: 'keyword',
                     controller: 'KeywordController as keywordCtrl',
-                    template: require('./modules/Keyword/index.tmpl.html')
+                    template: require('./modules/Keyword/index.tmpl.jade')
                 }]
         });
 }

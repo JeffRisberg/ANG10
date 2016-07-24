@@ -1,19 +1,21 @@
-<div class="row">
-    <div class="col-md-4">HOME</div>
+<div layout="row" layout-margin>
+    <div flex="33">
+    HOME
+    </div>
 
-    <div class="col-md-4">
+    <div flex="33">
         Uses Angular and UI-Router
     </div>
 
-    <div class="col-md-4">
+    <div flex="33">
         Uses ES6
     </div>
 </div>
 
-<div class="row">
+<div layout="row" layout-margin>
     <div ng-repeat="m in homeCtrl.metrics">
 
-        <div class="col-sm-6">
+        <div flex="50">
             <h2>{{m.name}}</h2>
             <slider metric="m"></slider>
             <fetcher></fetcher>

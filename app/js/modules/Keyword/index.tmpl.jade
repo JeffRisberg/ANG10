@@ -1,0 +1,9 @@
+div(layout="row" layout-margin)
+    div(flex="40")
+        | Keyword Template
+
+    .adGroup-list(flex="60")
+        .adGroup(ng-repeat="keyword in keywordCtrl.keywords")
+            p Keyword {{keyword.text}}
+
+include ./_footer.jade

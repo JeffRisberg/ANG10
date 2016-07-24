@@ -1,0 +1,116 @@
+
+md-toolbar {
+  background: #ddd !important;
+  color: #333 !important;
+}
+
+md-toolbar button {
+  text-transform: none !important;
+}
+
+md-toolbar md-button.active {
+  color: #eee !important;
+  background: #333 !important;
+}
+
+/* Tooltip container */
+.csstooltip {
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.csstooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: #888;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  margin-left: 40px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.csstooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.qm-blue {
+  background: #3698E8 !important;
+  font-size: 12px !important;
+}
+
+.qm-blue-text {
+  color: #3698E8 !important;
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+}
+
+.qm-white {
+  background: #fff;
+  font-size: 12px !important;
+}
+
+.qm-white-text {
+  color: #fff !important;
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+}
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px;
+}
+
+.gridListdemoBasicUsage .white {
+  background: #ffffff;
+}
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5;
+}
+
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca;
+}
+
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d;
+}
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff;
+}
+
+.gridListdemoBasicUsage .purple {
+  background: #b388ff;
+}
+
+.gridListdemoBasicUsage .red {
+  background: #ff8a80;
+}
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms;
+}
+
+.editFormExample md-grid-list {
+  margin: 15px;
+}
+
+.editFormExample md-grid-tile {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.19), 2px 2px 2px rgba(0, 0, 0, 0.23);
+  background: white;
+}
+
+.editFormExample md-grid-tile > div {
+  padding: 10px 24px 24px 24px;
+}
+
+.editFormExample md-grid-tile-header {
+  color: #333;
+}

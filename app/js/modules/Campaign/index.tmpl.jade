@@ -1,14 +1,16 @@
-.row
-    .col-md-5
+div(layout="row" layout-margin)
+    div(flex="40")
         | Campaigns Template
 
-    table.col-md-7.campaign-list.table
-        tr.campaign(ng-repeat="campaign in campaignCtrl.campaigns")
-            td
-                Campaign {{campaign.name}}
-            td
-                | {{campaign.status}}
-            td
-                | {{campaign.startDate}}
+    div(flex="60")
+        table.campaign-list
+            tr.campaign(ng-repeat="campaign in campaignCtrl.campaigns")
+                td
+                    | Campaign {{campaign.name}}
+                td
+                    | {{campaign.status}}
+                td
+                    | {{campaign.startDate}}
 
 include ./_footer.jade
+
