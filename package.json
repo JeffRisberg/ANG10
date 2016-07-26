@@ -4,8 +4,8 @@
   "description": "Angular 1.x with ECMAScript 6",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
     "postinstall": "webpack",
+    "start": "node server/index.js",
     "webpack": "webpack",
     "webpack-watch": "webpack --watch --colors"
   },
@@ -15,7 +15,8 @@
   },
   "keywords": [
     "angular",
-    "es6"
+    "es6",
+    "gulp"
   ],
   "author": "Jeff Risberg",
   "license": "MIT",
@@ -29,8 +30,10 @@
     "express": "^4.14.0",
     "file-loader": "^0.8.5",
     "glob": "^7.0.3",
+    "gulp": "3.9.1",
     "gulp-jshint": "^2.0.1",
     "gulp-ngdocs": "^0.2.13",
+    "gulp-useref": "3.1.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "jasmine-jquery": "^2.1.1",

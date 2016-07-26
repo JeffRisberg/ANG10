@@ -32,4 +32,12 @@ angular.module('ang10', ['ngMaterial', 'ngMessages',
     sliderModule.name, fetcherModule.name])
     .filter('upper', UpperFilter)
     .filter('lower', LowerFilter)
-    .config(Router);
+    .config(Router)
+    .controller('HeaderController', ['$scope', '$state', function ($scope, $state) {
+
+        $scope.stateIncludes = function (name) {
+            console.log(name + " " + $state.includes(name));
+            return $state.includes(name);
+        }
+    }]);
+
